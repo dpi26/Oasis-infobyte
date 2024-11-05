@@ -1,0 +1,142 @@
+<html>
+    <link><title>calculator</title>
+    <link ref="stylesheet" href="css/style.css"/>
+    <style>
+        *outer
+        {
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+            font-family: "roboto";
+
+        }
+        body
+        {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100;
+background:#fff;
+        }
+        .container
+        {
+            width: 100%;
+            max-width: 350px;
+            background:#260a35;
+            box-shadow: 5px,5px,10px rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+        .screen
+        {
+            width: 100%;
+        }
+        .screen input
+        {
+        width: 100%;
+        padding: 0.3rem 0.3rem;
+        font-size: 1.8rem;
+        text-align: right;
+        margin: 2rem 0;
+        font-weight: 600px;
+        border-radius: 2px;
+        border: none;
+        }
+        .cal_btn
+       {
+        padding: 1rem; 
+       } 
+       ul
+       {
+       display: flex;
+       list-style-type: none;
+       flex-wrap: wrap;
+       justify-content:space-between ;
+       }
+       ul li
+       {
+        font-size:1rem;
+        color: #8fff;
+        width:20%;
+        text-align: center;
+        padding:0.5rem1rem;
+              cursor: pointer ;
+              margin: 0.4rem;
+              background: #213346;
+              border-radius:2px;
+              transition: all 0.4s ease-in-out;    
+       }
+       ul li:active
+       {
+        transform:scale(1,2);
+       }
+       #equals
+       {
+        width:100%;
+        height: 30px;
+        background:#2c3e50;
+       }
+        </style>
+</head>
+    <body>
+<div class="container">
+<div class="cal_btn">
+    <div class="screen">
+        <input type="text" id="result" placeholder="0">
+    </div>
+    <ul> 
+        <li>Ac</li>
+        <li>Del</li>
+        <li>0</li>
+        <li>9</li>
+        <li>8</li>
+        <li>7</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>3</li>
+        <li>2</li>
+        <li>1</li>
+        <li>*</li>
+        <li>/</li>
+        <li>+</li>
+        <li>-</li>
+        <li>%</li>
+        <li>.</li>
+        <li id="equals">=</li>
+    </ul>
+</div>   
+</div>
+<script >
+    
+    let result = document.getElementById('result');
+    let nums = document.querySelectorAll('li');
+
+    for(let i=0;i<nums.length;i++)
+    {
+       result.value.innerHTML;
+       nums[i].addEventListener('click',function(){
+
+         let getvalue = document.getElementById('result').value;
+
+        if(nums[i].innerHTML=="="){
+            result.value = eval(result.value)
+        }
+        else{
+           if(nums[i].innerHTML=="Ac"){
+            result.value="";
+           }
+           else{
+            result.value += nums[i].innerHTML;
+
+           }
+         if(nums[i].innerHTML=="Del"){
+            result.value = getvalue.slice(0,-1);
+         }
+        }
+
+     } ) 
+    }
+    
+</script>
+    </body>
+    </html>
