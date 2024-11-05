@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with JS</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+           font-family: poppions sans-serif;
+        }
+        .container{
+            height:650px;
+            width: 100%;
+            background-image: url('https://wallpaperaccess.com/full/187161.jpg');
+            background-position: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .inner{
+            height: 500px;
+            width: 400px;
+            color: white;
+            background-color: rgb(8, 8, 228);
+            border: 1px solid #fff;
+            box-shadow: 2px 3px 4px 5px #fff;
+            box-shadow: 2px 3px 4px 1px inset #fff;
+            padding-left: 50px;
+            font-size: 20px;
+            
+        }
+        input{
+            height: 25px;
+            width: 330px;
+            border-radius: 10px;
+           
+        }
+        h1{
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+
+<div class="inner">
+    <h1>Raginstration Form</h1>
+    <form action="" onsubmit="return data()" method="get" >
+        
+       UserName:<br> <input type="text" id="n1"><br>
+       UserId:<br> <input type="email" id="n2"><br>
+       Contact No.:<br> <input type="text" id="n3"><br>
+       Password:<br> <input type="password" id="n4"><br>
+       Confirm Pass:<br><input type="password" id="n5">
+       <br><br>
+       <input type="submit" >
+    </form>
+</div>
+   </div>
+    
+<script>
+
+function data(){
+    let a=document.getElementById("n1").value;
+    let b=document.getElementById("n2").value;
+    let c=document.getElementById("n3").value;
+    let d=document.getElementById("n4").value;
+    let e=document.getElementById("n5").value;
+    if(a===""||b===""||c===""||d===""||e===""){
+        alert("Fill the all data in box");
+        return false;
+    }
+    else if(c.length<10||c.length>10){
+        alert(" Plz! enter valid number");
+        return false;
+    }
+    else if(isNaN(c)){
+        alert("Plz! enter numeric value in contact no.");
+        return false;
+    }
+    else if(d!=e){
+        alert("Plz! enter correct password");
+        return false
+    }
+    else{
+        true;
+    }
+}
+
+</script>
+</body>
+</html>
