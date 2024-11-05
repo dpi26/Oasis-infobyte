@@ -1,0 +1,129 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pizza Delivery</title>  
+    <style>
+        body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 20px;  
+    background-color: #f4f4f4;  
+}  
+
+header, footer {  
+    text-align: center;  
+    background-color: #333;  
+    color: #fff;  
+    padding: 10px 0;  
+}  
+
+main {  
+    background-color: white;  
+    padding: 20px;  
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(151, 100, 100, 0.1);  
+}  
+
+label {  
+    display: block;  
+    margin-top: 10px;  
+}  
+
+input[type="text"], select {  
+    width: 100%;  
+    padding: 8px;  
+    margin-top: 5px;  
+}  
+
+.hidden {  
+    display: none;  
+}  
+
+button {  
+    margin-top: 20px;  
+    padding: 10px;  
+    background-color: #28a745;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+button:hover {  
+    background-color: #05cf31;  
+} 
+
+    </style> 
+</head>  
+<body>  
+    <header>  
+        <h1>Pizza Delivery Service</h1>  
+    </header>  
+    
+    <main>  
+        <h2>Choose Your Pizza</h2>  
+        <form id="orderForm">  
+            <label for="size">Select Size:</label>  
+            <select id="size" name="size">  
+                <option value="small">Small</option>  
+                <option value="medium">Medium</option>  
+                <option value="large">Large</option>  
+            </select>  
+            <br>  
+
+            <label for="toppings">Select Toppings:</label>  
+            <input type="checkbox" id="pepperoni" name="toppings" value="Pepperoni">  
+            <label for="pepperoni">Pepperoni</label>  
+            <input type="checkbox" id="mushrooms" name="toppings" value="Mushrooms">  
+            <label for="mushrooms">Mushrooms</label>  
+            <input type="checkbox" id="onions" name="toppings" value="Onions">  
+            <label for="onions">Onions</label>  
+            <br>  
+
+            <label for="address">Delivery Address:</label>  
+            <input type="text" id="address" name="address" required>  
+            <br>  
+
+            <button type="submit">Order Pizza</button>  
+        </form>  
+
+        <div id="confirmationMessage" class="hidden"></div>  
+    </main>  
+
+    <footer>  
+        <p>Pizza Delivery. All rights reserved.</p>  
+    </footer>  
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {  
+    event.preventDefault(); // Prevent the form from submitting normally  
+
+    // Get the selected size  
+    const size = document.getElementById('size').value;  
+
+    // Get selected toppings  
+    const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(t => t.value);  
+
+    // Get the address  
+    const address = document.getElementById('address').value;  
+
+    // Create confirmation message  
+    const confirmationMessage = `  
+        Thank you for your order!   
+        You have ordered a ${size} pizza with ${toppings.join(', ') || 'no toppings'}.  
+        We will deliver it to: ${address}.  
+    `;  
+
+    // Display confirmation message  
+    const messageDiv = document.getElementById('confirmationMessage');  
+    messageDiv.classList.remove('hidden');  
+    messageDiv.innerText = confirmationMessage;  
+
+    // Clear the form  
+    this.reset();  
+});  
+    </script>  
+</body>  
+</html>  
