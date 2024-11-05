@@ -1,0 +1,104 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Temperature Converter</title>  
+    <style>
+        body {  
+    font-family: Arial, sans-serif;  
+    background-color: #d89292;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+.container {  
+    width: 300px;  
+    margin: 100px auto;  
+    padding: 20px;  
+    background: rgb(193, 110, 110);  
+    border-radius: 8px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    text-align: center;  
+}  
+
+h1 {  
+    margin-bottom: 20px;  
+}  
+
+.converter {  
+    display: flex;  
+    flex-direction: column;  
+}  
+
+#input-temperature {  
+    padding: 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+}  
+
+select {  
+    padding: 10px;  
+    margin-bottom: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+}  
+
+button {  
+    padding: 10px;  
+    background: #678ecd;  
+    color: white;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+    margin-bottom: 10px;  
+}  
+
+button:hover {  
+    background: #0056b3;  
+}  
+
+#result {  
+    margin-top: 20px;  
+    font-weight: bold;  
+}  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>Temperature Converter</h1>  
+        <div class="converter">  
+            <input type="number" id="input-temperature" placeholder="Enter temperature" />  
+            <select id="scale">  
+                <option value="Celsius">Celsius</option>  
+                <option value="Fahrenheit">Fahrenheit</option>  
+            </select>  
+            <button id="convert-btn">Convert</button>  
+            <div id="result"></div>  
+        </div>  
+    </div>  
+
+    <script>
+       document.getElementById('convert-btn').addEventListener('click', function() {  
+    const temperature = parseFloat(document.getElementById('input-temperature').value);  
+    const scale = document.getElementById('scale').value;  
+    let result;  
+
+    if (isNaN(temperature)) {  
+        result = "Please enter a valid number.";  
+    } else {  
+        if (scale === "Celsius") {  
+            result = (temperature * 9/5) + 32; // Convert to Fahrenheit  
+            result = `${temperature}°C = ${result.toFixed(2)}°F`;  
+        } else {  
+            result = (temperature - 32) * 5/9; // Convert to Celsius  
+            result = `${temperature}°F = ${result.toFixed(2)}°C`;  
+        }  
+    }  
+    
+    document.getElementById('result').innerText = result;  
+});   
+    </script>  
+</body>  
+</html>  
