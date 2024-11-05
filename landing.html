@@ -1,0 +1,228 @@
+<!DOCTYPE html>  
+<html lang="en">  
+
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>My Company Landing Page</title>  
+    <link rel="stylesheet" href="landing.css">
+    <style>
+        body {  
+    font-family: Arial, sans-serif;  
+    margin: 0;  
+    padding: 0;  
+    line-height: 1.6;  
+    scroll-behavior: smooth;
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFAulbVW6uSk9OYLUbFGZ8-J3QKoJuy4Vx5w&s ');
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
+
+.container {  
+    width: 80%;  
+    margin: auto;  
+}  
+
+header {  
+    background: #cfadde; 
+    background: linear-gradient(2px white 3px pink 4px white 5px purple); 
+    color: #faf7f7;  
+    padding: 20px 0;  
+}  
+
+nav ul {  
+    list-style: none;  
+    padding: 0;  
+    text-align: center;  
+}  
+
+nav ul li {  
+    display: inline;  
+    margin-right: 15px;  
+}  
+
+nav a {  
+    color: #3f3d3d;  
+    text-decoration: none;  
+    transition: color 0.3s ease;  
+}  
+
+nav a:hover {  
+    color: #f39c12;  
+}  
+
+.about, .services, .gallery, .contact {  
+    padding: 40px 0;  
+    text-align: center;  
+}  
+
+h2 {  
+    margin-bottom: 20px;  
+    animation: fadeIn 1s;  
+}  
+
+.about p, .service p {  
+    max-width: 600px;  
+    margin: auto;  
+}  
+
+.service {  
+    margin: 20px 0;  
+    transition: transform 0.3s; 
+    border: 1px solid bisque; 
+}  
+
+.service:hover {  
+    transform: scale(1.05);  
+    border: 1px solid burlywood;
+}  
+
+.gallery .images {  
+    display: flex;  
+    justify-content: center;  
+    flex-wrap: wrap;  
+}  
+
+.gallery img {  
+    width: 200px;  
+    height: auto;  
+    margin: 10px;  
+    transition: transform 0.3s;  
+}  
+
+.gallery img:hover {  
+    transform: scale(1.1);  
+}  
+
+.contact form {  
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;  
+    
+}  
+
+.contact input, .contact textarea {  
+    padding: 10px;  
+    margin: 10px 0;  
+    width: 300px;  
+}  
+
+.contact button {  
+    padding: 10px 20px;  
+    background: #5e736f;  
+    color: #fff;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+footer {  
+    background: #eaceb1;  
+    color: #fff;  
+    text-align: center;  
+    padding: 20px 0;  
+}  
+
+/* Animations */  
+@keyframes fadeIn {  
+    from {  
+        opacity: 0;  
+    }  
+    to {  
+        opacity: 1;  
+    }  
+}  
+
+/* Responsive Styles */  
+@media (max-width: 600px) {  
+    nav ul li {  
+        display: block;  
+        margin: 10px 0;  
+    }  
+
+    .contact input, .contact textarea {  
+        width: 90%;  
+    }  
+
+    .gallery img {  
+        width: 100%;  
+        max-width: 150px;  
+    }  
+}
+    </style>  
+</head>  
+
+<body>  
+    <header>  
+        <div class="container">  
+            <h1>My Company </h1>  
+            <nav>  
+                <ul>  
+                    <li><a href="#about">About</a></li>  
+                    <li><a href="#services">Services</a></li>  
+                    <li><a href="#gallery">Gallery</a></li>  
+                    <li><a href="#contact">Contact Us</a></li>  
+                </ul>  
+            </nav>  
+        </div>  
+    </header>  
+
+    <section id="about" class="about">  
+        <div class="container">  
+            <h2>About Us</h2>  
+            <p>We are committed to providing the best services in our industry. Our team is experienced and passionate, ready to meet your needs.</p>  
+        </div>  
+    </section>  
+
+    <section id="services" class="services">  
+        <div class="container">  
+            <h1>Our Services</h1>  
+            <div class="service">  
+                <h3>Service One</h3>  
+                <p>Business services can help companies focus on their primary operations by reducing interruptions. They can also help companies cut costs, improve security, and handle shipping </p>  
+            </div>  
+            <div class="service">  
+                <h3>Service Two</h3>  
+                <p>Company Services means any services (including but not limited to technical and product support, technical advice, underwriting and customer services) supplied by the Company or its Affiliates in the specialty property and/or casualty insurance business..</p>  
+            </div>  
+            <div class="service">  
+                <h3>Service Three</h3>  
+                <p>Service Industry Types. There are three main types of industries related to services which people commonly utilize. The service industry types include consumer services, business services, and public services..</p>  
+            </div>  
+        </div>  
+    </section>  
+
+    <section id="gallery" class="gallery">  
+        <div class="container">  
+            <h2>Gallery</h2>  
+            <div class="images">  
+                <img src="https://img.freepik.com/premium-photo/poster-company-company-with-word-company-it_1115474-114758.jpg " alt="Gallery Image 1">  
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuLQuMGRJB4Sx5qG6s5IU41UbAILhvBixqgQ&s" alt="Gallery Image 2">  
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvNWz_Kq1TJwpHEdIR8y_nCThOy31T-jBTXA&s" alt="Gallery Image 3">  
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/company-logo-design-template-e089327a5c476ce5c70c74f7359c5898_screen.jpg?ts=1672291305" alt="Gallery Image 4">  
+            </div>  
+        </div>  
+    </section>  
+
+    <section id="contact" class="contact">  
+        <div class="container">  
+            <h2>Contact Us</h2>  
+            <form>  
+                <input type="text" placeholder="Your Name" required>  
+                <input type="email" placeholder="Your Email" required>  
+                <textarea placeholder="Your Message" required></textarea>  
+                <button type="submit">Send Message</button>  
+            </form>  
+        </div>  
+    </section>  
+
+    <footer>  
+        <div class="container">  
+            <p> My Company.</p>  
+        </div>  
+    </footer>  
+
+    <script src="script.js"></script>  
+</body>  
+
+</html>
